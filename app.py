@@ -24,5 +24,21 @@ def stitched_html():
     return render_template("structure/base.html", title="Injected title")
 
 
+@app.route("/extended")
+def extended_html():
+    """Example of Jinja template inheritance"""
+    cool_variable = 3
+    if cool_variable < 0:
+        frozen = True
+    else:
+        frozen = False
+    return render_template(
+        "pages/child_template.html",
+        title="New title",
+        cool_variable=cool_variable,
+        frozen=frozen,
+    )
+
+
 if __name__ == "__main__":
     app.run(host="localhost", port=8000, debug=app.debug)

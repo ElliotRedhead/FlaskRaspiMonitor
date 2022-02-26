@@ -19,6 +19,13 @@
 
 	<body>
 		{% include "structure/navbar.html" %}
+		{% block content_uno %}
+		{% endblock %}
+		{% block content_dos %}
+		{% endblock %}
+		{% block content_tres %}
+		{% endblock %}
+		<p style="color:grey; margin-top: 5rem;">I am rendered by the base.html file, along with the included navbar.</p>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>

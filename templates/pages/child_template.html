@@ -1,0 +1,26 @@
+{% extends "structure/base.html" %}
+
+<!-- Following blocks out of order to show how these can be passed in any order (or not at all if not wanted, see lack of content_tres!) -->
+
+{% block content_dos %}
+<p>I'm populating "content_dos" block.
+{% if cool_variable %}
+There is a cool variable with a value of {{ cool_variable }}!
+ {% if frozen %}
+ Damn, that's cold!
+ {% endif %}
+{% endif %}
+</p>
+{% endblock %}
+
+{% block content_uno %}
+<div>
+<p>This block is defined as the first to display in the base.html</p>
+</div>
+{% endblock %}
+
+
+
+
+As I am "extending" the base HTML file then this line of text is not rendered as it is not mapped to a block.
+(But always comment-out comments anyway, this is just to prove a point)
