@@ -1,0 +1,25 @@
+html,
+body {
+	height: 100%;
+	display: flex;
+	flex-flow: column;
+}
+
+:root {
+	--bs-dark-rgb: 17, 17, 17;
+}
+
+#clock-container {
+	height: 100%;
+	display: flex;
+	flex-flow: column;
+	flex-grow: 0;
+	justify-content: center;
+	align-items: center;
+	background-color: #000000;
+}
+
+#clock {
+	font-size: 25vw;
+	color: #555555;
+}

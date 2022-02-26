@@ -1,0 +1,10 @@
+{% extends "structure/base.html" %}
+{% block navbar %}
+{% include "structure/navbar.html" %}
+{% endblock %}
+{% block content %}
+{% include "components/clock.html" %}
+{% endblock %}
+{% block scripts %}
+<script src="{{url_for('static', filename='js/time.js')}}"></script>
+{% endblock %}
