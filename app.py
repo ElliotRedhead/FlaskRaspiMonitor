@@ -2,7 +2,7 @@ import os
 
 import cv2
 from dotenv import load_dotenv
-from flask import Flask, Response, render_template
+from flask import Flask, Response, render_template, request
 
 load_dotenv()
 HOST = os.environ.get("HOST")
@@ -16,17 +16,26 @@ app.debug = DEBUG
 app.active_video = False
 
 
+@app.after_request
+def video_feed_check(response):
+    """Toggle stream reading based on URL."""
+    if "/static" not in request.url:
+        if request.url.endswith("rtmp"):
+            app.active_video = True
+        else:
+            app.active_video = False
+    return response
+
+
 @app.route("/")
 @app.route("/clock")
 def clock():
-    """Display the current time"""
-    app.active_video = False
+    """Display the current time."""
     return render_template("pages/clock.html")
 
 
 @app.route("/rtmp")
 def rtmp():
-    app.active_video = True
     return Response(gen_frames(), mimetype="multipart/x-mixed-replace; boundary=frame")
 
 
