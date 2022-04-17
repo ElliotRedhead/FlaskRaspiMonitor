@@ -7,6 +7,9 @@ A collection of utility routes suitable for display on a small Raspberry Pi LCD 
 ### Clock
 A digital representation of the system time, formatted HH:MM:SS.
 
+### RTMP / Video Feed
+Display of an RTMP feed, inspired by ONVIF CCTV streaming capability.
+
 ## Getting started
 
 ### Pre-requisites
